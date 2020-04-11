@@ -1,8 +1,8 @@
 {
-  "name": "materialize-admin-boiler-plate",
-  "description": "Materialize Admin Template",
+  "name": "schools-out",
+  "description": "Schools Out",
   "url": "http://pixinvent.com/",
-  "version": "4.0.0",
+  "version": "1.0.0",
   "private": true,
   "main": "index.js",
   "scripts": {
@@ -21,19 +21,8 @@
     "Materialize"
   ],
   "author": {
-    "name": "Pixinvent",
-    "url": "http://pixinvent.com"
+    "name": "Murilo Pazzini"
   },
-  "bugs": {
-    "url": "https://support.pixinvent.com"
-  },
-  "license": "Themeforest Standard Licenses",
-  "licenses": [
-    {
-      "type": "Themeforest Standard Licenses",
-      "url": "http://themeforest.net/licenses/standard"
-    }
-  ],
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
