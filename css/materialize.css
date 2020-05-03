@@ -2068,7 +2068,7 @@
 }
 
 .grey-text.text-lighten-2 {
-  color: #e0e0e0 !important;
+  color: #616161 !important;
 }
 
 .grey.lighten-1 {
@@ -2860,7 +2860,7 @@ a {
 blockquote {
   margin: 20px 0;
   padding-left: 1.5rem;
-  border-left: 5px solid #00bcd4;
+  border-left: 5px solid whitesmoke;;
 }
 
 i {
@@ -2920,7 +2920,7 @@ video.responsive-video {
 }
 
 .pagination li.active {
-  background-color: #00bcd4;
+  background-color: whitesmoke;;
 }
 
 .pagination li.disabled a {
@@ -3104,15 +3104,15 @@ ul.staggered-list li {
 .page-footer {
   padding-top: 20px;
   color: #fff;
-  background-color: #00bcd4;
+  background-color: whitesmoke;;
 }
 
 .page-footer .footer-copyright {
   overflow: hidden;
   align-items: center;
   padding: 6px 0px;
-  color: rgba(255, 255, 255, 0.8);
-  background-color: rgba(51, 51, 51, 0.08);
+  color: black;
+  background-color: whitesmoke;
 }
 
 table, th, td {
@@ -4379,8 +4379,8 @@ nav ul a span.badge {
 }
 
 nav {
-  color: #fff;
-  background-color: #00bcd4;
+  color: rgb(0, 0, 0);
+  background-color: whitesmoke;;
   width: 100%;
   height: 56px;
   line-height: 56px;
@@ -4439,7 +4439,7 @@ nav .button-collapse i {
 
 nav .brand-logo {
   position: absolute;
-  color: #fff;
+  color: #000000;
   display: inline-block;
   font-size: 2.1rem;
   padding: 0;
@@ -4503,7 +4503,7 @@ nav ul li.active {
 nav ul a {
   transition: background-color .3s;
   font-size: 1rem;
-  color: #fff;
+  color: #000000;
   display: block;
   padding: 0 15px;
   cursor: pointer;
@@ -5184,7 +5184,7 @@ small {
 
 .tabs .tab a:hover, .tabs .tab a.active {
   background-color: transparent;
-  color: #00bcd4;
+  color: whitesmoke;;
 }
 
 .tabs .tab.disabled a,
@@ -7328,13 +7328,13 @@ input[type=range]:focus::-ms-fill-upper {
 .table-of-contents a:hover {
   color: #a8a8a8;
   padding-left: 19px;
-  border-left: 1px solid #00bcd4;
+  border-left: 1px solid whitesmoke;;
 }
 
 .table-of-contents a.active {
   font-weight: 500;
   padding-left: 18px;
-  border-left: 2px solid #00bcd4;
+  border-left: 2px solid whitesmoke;;
 }
 
 .side-nav {
@@ -7537,7 +7537,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .side-nav .collapsible-body > ul:not(.collapsible) > li.active,
 .side-nav.fixed .collapsible-body > ul:not(.collapsible) > li.active {
-  background-color: #00bcd4;
+  background-color: whitesmoke;;
 }
 
 .side-nav .collapsible-body > ul:not(.collapsible) > li.active a,
@@ -8154,7 +8154,17 @@ input[type=range]:focus::-ms-fill-upper {
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 300px;
+  perspective: 500px;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+}
+
+.carousel.medium {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 450px;
   perspective: 500px;
   transform-style: preserve-3d;
   transform-origin: 0% 50%;
@@ -8198,8 +8208,17 @@ input[type=range]:focus::-ms-fill-upper {
 
 .carousel .carousel-item {
   display: none;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.carousel.medium .carousel-item {
+  display: none;
+  width: 250px;
+  height: 450px;
   position: absolute;
   top: 0;
   left: 0;
@@ -8273,7 +8292,7 @@ input[type=range]:focus::-ms-fill-upper {
   position: absolute;
   font-size: 1rem;
   border-radius: 50%;
-  background-color: #00bcd4;
+  background-color: whitesmoke;;
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.14), 0 10px 50px 0 rgba(0, 0, 0, 0.12), 0 30px 10px -20px rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 100%;

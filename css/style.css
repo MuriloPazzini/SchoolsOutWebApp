@@ -2451,7 +2451,7 @@ body.layout-light .page-footer {
 
 body.layout-light .footer-copyright {
   color: rgba(0, 0, 0, 0.87);
-  background: #fff;
+  background: whitesmoke;
 }
 
 body.layout-dark ul.side-nav.leftside-navigation {
@@ -2603,12 +2603,11 @@ body.layout-semi-dark .page-footer {
 
 body.layout-semi-dark .footer-copyright {
   color: rgba(0, 0, 0, 0.87);
-  background: #fff;
+  background: whitesmoke;
 }
 
 #main {
   min-height: calc(100% - 100px);
-  padding-left: 240px;
   -webkit-transition: .3s ease all;
   -o-transition: .3s ease all;
   -moz-transition: .3s ease all;
@@ -2620,10 +2619,6 @@ body.layout-semi-dark .footer-copyright {
 
 #main.main-full {
   padding-left: 64px;
-}
-
-footer {
-  padding-left: 240px;
 }
 
 footer.page-footer {
@@ -5486,7 +5481,7 @@ li.home:before {
 }
 
 .grey-text.text-lighten-2 {
-  color: #e0e0e0 !important;
+  color: #616161 !important;
 }
 
 .grey.lighten-1 {
@@ -6639,7 +6634,7 @@ ul.side-nav.leftside-navigation li:not(.no-padding) a {
 }
 
 ul.side-nav.leftside-navigation li:not(.no-padding).user-details {
-  background: url("../../images/gallary/12.png") no-repeat center center;
+  background: url("../../images/gallary/3.png") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -6721,7 +6716,7 @@ ul.side-nav .collapsible-header.active:after {
 .sidebar-collapse {
   position: absolute;
   left: -170px;
-  top: -50px;
+  top: -68px;
 }
 
 .user-task,

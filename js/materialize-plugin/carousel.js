@@ -2,7 +2,7 @@
 
   var methods = {
 
-    init : function(options) {
+    init: function (options) {
       var defaults = {
         duration: 200, // ms
         dist: -100, // zoom scale TODO: make this more intuitive as an option
@@ -16,11 +16,11 @@
       options = $.extend(defaults, options);
       var namespace = Materialize.objectSelectorString($(this));
 
-      return this.each(function(i) {
+      return this.each(function (i) {
 
         var images, item_width, item_height, offset, center, pressed, dim, count,
-            reference, referenceY, amplitude, target, velocity, scrolling,
-            xform, frame, timestamp, ticker, dragged, vertical_dragged;
+          reference, referenceY, amplitude, target, velocity, scrolling,
+          xform, frame, timestamp, ticker, dragged, vertical_dragged;
         var $indicators = $('<ul class="indicators"></ul>');
         var scrollingTimeout = null;
         var oneTimeCallback = null;
@@ -31,12 +31,12 @@
         var hasMultipleSlides = view.find('.carousel-item').length > 1;
         var showIndicators = (view.attr('data-indicators') || options.indicators) && hasMultipleSlides;
         var noWrap = (view.attr('data-no-wrap') || options.noWrap) || !hasMultipleSlides;
-        var uniqueNamespace = view.attr('data-namespace') || namespace+i;
+        var uniqueNamespace = view.attr('data-namespace') || namespace + i;
         view.attr('data-namespace', uniqueNamespace);
 
 
         // Options
-        var setCarouselHeight = function(imageOnly) {
+        var setCarouselHeight = function (imageOnly) {
           var firstSlide = view.find('.carousel-item.active').length ? view.find('.carousel-item.active').first() : view.find('.carousel-item').first();
           var firstImage = firstSlide.find('img').first();
           if (firstImage.length) {
@@ -54,7 +54,7 @@
               }
             } else {
               // Get height when image is loaded normally
-              firstImage.on('load', function(){
+              firstImage.on('load', function () {
                 view.css('height', $(this).height());
               });
             }
@@ -167,7 +167,7 @@
           if (scrollingTimeout != null) {
             window.clearTimeout(scrollingTimeout);
           }
-          scrollingTimeout = window.setTimeout(function() {
+          scrollingTimeout = window.setTimeout(function () {
             scrolling = false;
             view.removeClass('scrolling');
           }, options.duration);
@@ -279,13 +279,13 @@
 
           // onCycleTo callback
           if (lastCenter !== center &&
-              typeof(options.onCycleTo) === "function") {
+            typeof (options.onCycleTo) === "function") {
             var $curr_item = view.find('.carousel-item').eq(wrap(center));
             options.onCycleTo.call(this, $curr_item, dragged);
           }
 
           // One time callback
-          if (typeof(oneTimeCallback) === "function") {
+          if (typeof (oneTimeCallback) === "function") {
             oneTimeCallback.call(this, $curr_item, dragged);
             oneTimeCallback = null;
           }
@@ -311,10 +311,10 @@
             elapsed = Date.now() - timestamp;
             delta = amplitude * Math.exp(-elapsed / options.duration);
             if (delta > 2 || delta < -2) {
-                scroll(target - delta);
-                requestAnimationFrame(autoScroll);
+              scroll(target - delta);
+              requestAnimationFrame(autoScroll);
             } else {
-                scroll(target);
+              scroll(target);
             }
           }
         }
@@ -459,7 +459,7 @@
         });
 
 
-        var throttledResize = Materialize.throttle(function() {
+        var throttledResize = Materialize.throttle(function () {
           if (options.fullWidth) {
             item_width = view.find('.carousel-item').first().innerWidth();
             var imageHeight = view.find('.carousel-item.active').height();
@@ -472,17 +472,17 @@
           }
         }, 200);
         $(window)
-          .off('resize.carousel-'+uniqueNamespace)
-          .on('resize.carousel-'+uniqueNamespace, throttledResize);
+          .off('resize.carousel-' + uniqueNamespace)
+          .on('resize.carousel-' + uniqueNamespace, throttledResize);
 
         setupEvents();
         scroll(offset);
 
-        $(this).on('carouselNext', function(e, n, callback) {
+        $(this).on('carouselNext', function (e, n, callback) {
           if (n === undefined) {
             n = 1;
           }
-          if (typeof(callback) === "function") {
+          if (typeof (callback) === "function") {
             oneTimeCallback = callback;
           }
 
@@ -494,11 +494,11 @@
           }
         });
 
-        $(this).on('carouselPrev', function(e, n, callback) {
+        $(this).on('carouselPrev', function (e, n, callback) {
           if (n === undefined) {
             n = 1;
           }
-          if (typeof(callback) === "function") {
+          if (typeof (callback) === "function") {
             oneTimeCallback = callback;
           }
 
@@ -510,11 +510,11 @@
           }
         });
 
-        $(this).on('carouselSet', function(e, n, callback) {
+        $(this).on('carouselSet', function (e, n, callback) {
           if (n === undefined) {
             n = 0;
           }
-          if (typeof(callback) === "function") {
+          if (typeof (callback) === "function") {
             oneTimeCallback = callback;
           }
 
@@ -526,16 +526,16 @@
 
 
     },
-    next : function(n, callback) {
+    next: function (n, callback) {
       $(this).trigger('carouselNext', [n, callback]);
     },
-    prev : function(n, callback) {
+    prev: function (n, callback) {
       $(this).trigger('carouselPrev', [n, callback]);
     },
-    set : function(n, callback) {
+    set: function (n, callback) {
       $(this).trigger('carouselSet', [n, callback]);
     },
-    destroy : function() {
+    destroy: function () {
       var uniqueNamespace = $(this).attr('data-namespace');
       $(this).removeAttr('data-namespace');
       $(this).removeClass('initialized');
@@ -543,7 +543,7 @@
 
       // Remove event handlers
       $(this).off('carouselNext carouselPrev carouselSet');
-      $(window).off('resize.carousel-'+uniqueNamespace);
+      $(window).off('resize.carousel-' + uniqueNamespace);
       if (typeof window.ontouchstart !== 'undefined') {
         $(this).off('touchstart.carousel touchmove.carousel touchend.carousel');
       }
@@ -552,14 +552,14 @@
   };
 
 
-    $.fn.carousel = function(methodOrOptions) {
-      if ( methods[methodOrOptions] ) {
-        return methods[ methodOrOptions ].apply( this, Array.prototype.slice.call( arguments, 1 ));
-      } else if ( typeof methodOrOptions === 'object' || ! methodOrOptions ) {
-        // Default to "init"
-        return methods.init.apply( this, arguments );
-      } else {
-        $.error( 'Method ' +  methodOrOptions + ' does not exist on jQuery.carousel' );
-      }
-    }; // Plugin end
-}( jQuery ));
+  $.fn.carousel = function (methodOrOptions) {
+    if (methods[methodOrOptions]) {
+      return methods[methodOrOptions].apply(this, Array.prototype.slice.call(arguments, 1));
+    } else if (typeof methodOrOptions === 'object' || !methodOrOptions) {
+      // Default to "init"
+      return methods.init.apply(this, arguments);
+    } else {
+      $.error('Method ' + methodOrOptions + ' does not exist on jQuery.carousel');
+    }
+  }; // Plugin end
+}(jQuery));
