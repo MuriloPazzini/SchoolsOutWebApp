@@ -1,3 +1,15 @@
+@font-face {
+	font-family: "Lemon";
+	src: local(Lemon), url("../../fonts/lemon_juice/Lemon_Juice.otf") format("opentype");
+	font-weight: 100;
+  }
+
+  @font-face {
+	font-family: "Gilles";
+	src: local(Gilles), url("../../fonts/gilles/Gilles_Handwriting.ttf") format("truetype");
+	font-weight: 100;
+  }
+
 .profile-image {
 	width: 60px;
 	height: 60px !important;
@@ -6,4 +18,33 @@
 .centered-loader {
 	margin: 0 auto;
 	width: 50px;
+}
+
+.logo-text {
+	font-family: 'Lemon';
+}
+
+h3 {
+	font-family: 'Lemon';
+	font-size: 4.92rem;
+
+}
+
+h1 span.logo-text {
+	font-size: 45px;
+}
+
+.card .card-content .card-title {
+	font-family: lemon;
+    font-size: 34px;
+}
+
+.card .card-reveal .card-title {
+	font-family: lemon;
+    font-size: 34px;
+}
+
+p {
+	font-size: 17px;
+	font-family: "gilles", sans-serif;
 }
