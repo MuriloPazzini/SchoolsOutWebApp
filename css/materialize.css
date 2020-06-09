@@ -8618,6 +8618,23 @@ input[type=range]:focus::-ms-fill-upper {
   width: 35em;
 }
 
+@media (max-width: 600px) 
+{
+  .carousel.large .carousel-item {
+    display: none;
+    width: 25em;
+    height: 25em;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .carousel.large .carousel-item>img {
+    height: 25em;
+    width: 25em;
+  }
+}
+
 .next,
 .prev {
   position: absolute;
