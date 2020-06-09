@@ -31,7 +31,7 @@ h3 {
 }
 
 h1 span.logo-text {
-	font-size: 45px;
+	font-size: 1.1em;
 }
 
 .card .card-content .card-title {
@@ -78,7 +78,6 @@ p {
 	height: 420px;
 	padding: 10px;
 	margin: 0 auto;
-	background: whitesmoke;
 	position: relative;
 }
 
@@ -409,3 +408,52 @@ p {
 	font-size: 3.5em;
 	font-family: lemon;
 }
+
+#quiz-card-body {
+	padding-left: 25%;
+	padding-right: 25%;
+	width: 100%;
+	}
+
+@media (max-width: 600px) 
+{
+#quiz-card-body {
+	padding-left: 10%;
+	padding-right: 10%;
+	width: 100%;
+	}
+}
+
+.mobile-congrats-header {
+	position: absolute;
+	margin-top: 25vh;
+	width: 100%;
+	text-align: center;
+	font-size: 300%;
+	font-family: lemon;
+	color: black;
+	opacity: 0.5;
+  }
+
+.mobile-congrats-text {
+	position: absolute;
+	margin-top: 40vh;
+	width: 100%;
+	text-align: center;
+	font-size: 300%;
+	font-family: lemon;
+	color: black;
+	opacity: 0.5;
+  }
+  
+.confetti-canvas {
+	overflow-y: hidden;
+	overflow-x: hidden;
+	width: 100%;
+	margin: 0;
+  }
+
+  .mobile-congrats {
+	  display: none;
+  }
+  
