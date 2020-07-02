@@ -15,4 +15,4 @@ app.get('/quiz/answer', function (req, res) {
 });
 
 app.use(express.static("."));
-var server = app.listen('3000', () => console.log('Server Up and running'));
+var server = app.listen(process.env.PORT, () => console.log('Server Up and running'));
