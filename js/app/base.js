@@ -33,6 +33,22 @@ function checkAuthState() {
                 }
             );
         } else {
+            $('#notification-qtd').append(`
+            <small class="notification-badge pink accent-2">2</small>
+            `);
+
+            $('#notifications-dropdown').append(`
+            <li>
+              <a href="` + window.location.href + "login" + `" class="grey-text text-darken-2">
+                Ja tem conta?  
+              </a>
+            </li>
+            <li>
+              <a href="` + window.location.href + "sign-up" + `" class="grey-text text-darken-2">
+                Bora fazer uma conta?  
+              </a>
+            </li>
+            `);
             // No user is signed in.
         }
     });

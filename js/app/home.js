@@ -75,4 +75,5 @@ function initHomeQuizCarousel() {
 $(document).ready(function () {
     initHomeBookCarousel();
     initHomeQuizCarousel();
+    checkAuthState();
 });
